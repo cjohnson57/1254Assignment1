@@ -38,7 +38,7 @@ int main(int argc, char** argv)
 	
 	/* read file */
 	ifstream f;
-	f.open(argv[1]); //should be argv[1] for testing "C:\\Users\\Caleb\\Desktop\\1254 Projects\\prog1\\testRoster.txt"
+	f.open(argv[1]); //should be argv[1], for testing "C:\\Users\\Caleb\\Desktop\\1254 Projects\\prog1\\testRoster.txt"
 	if(!f)
 	{
 		cout << "File " << argv[1] << " does not exist." << endl;
@@ -193,7 +193,7 @@ int main(int argc, char** argv)
 	
 	/* update file */
 	ofstream g;
-	g.open(argv[1]); //should be argv[1] for testing "C:\\Users\\Caleb\\Desktop\\1254 Projects\\prog1\\testRoster.txt"
+	g.open(argv[1]); //should be argv[1], for testing "C:\\Users\\Caleb\\Desktop\\1254 Projects\\prog1\\testRoster.txt"
 	l->traverseOut(&g, hwWeight, qzWeight, fxWeight);
 	g.close();
 	cout << "Done." << endl;

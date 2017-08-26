@@ -96,27 +96,62 @@ void OrderedList::traverse(void)
 
 void OrderedList::traverseByGrade(void)
 {
-	string comparestrings[100];
-	for (int i = 0; i < length; i++)
-	{
-		comparestrings[i] = nodes[i].letterGrade() + nodes[i].toString();
-	}
+	//string comparestrings[100];
+	//for (int i = 0; i < length; i++)
+	//{
+	//	comparestrings[i] = nodes[i].letterGrade() + nodes[i].toString();
+	//}
+	//bool finishedsorting = false;
+	//string tempstring;
+	//Student tempstudent;
+	//while (!finishedsorting)
+	//{
+	//	finishedsorting = true;
+	//	for (int i = 0; i < length - 1; i++)
+	//	{
+
+	//		int comparer = comparestrings[i].compare(comparestrings[i + 1]);
+	//		if (comparer > 0)
+	//		{
+	//			finishedsorting = false;
+
+	//			tempstring = comparestrings[i];
+	//			comparestrings[i] = comparestrings[i + 1];
+	//			comparestrings[i + 1] = tempstring;
+
+	//			tempstudent = nodes[i];
+	//			nodes[i] = nodes[i + 1];
+	//			nodes[i + 1] = tempstudent;
+	//		}
+	//	}
+	//}
+
 	bool finishedsorting = false;
-	string tempstring;
 	Student tempstudent;
 	while (!finishedsorting)
 	{
 		finishedsorting = true;
 		for (int i = 0; i < length - 1; i++)
 		{
-			int comparer = comparestrings[i].compare(comparestrings[i + 1]);
+			string a = nodes[i].toString();
+			string b = nodes[i + 1].toString();
+			
+			int comparer;
+			if (nodes[i].calculateGrade() > nodes[i + 1].calculateGrade())
+			{
+				comparer = -1;
+			}
+			else if (nodes[i].calculateGrade() < nodes[i + 1].calculateGrade())
+			{
+				comparer = 1;
+			}
+			else
+			{
+				comparer = a.compare(b);
+			}
 			if (comparer > 0)
 			{
 				finishedsorting = false;
-
-				tempstring = comparestrings[i];
-				comparestrings[i] = comparestrings[i + 1];
-				comparestrings[i + 1] = tempstring;
 
 				tempstudent = nodes[i];
 				nodes[i] = nodes[i + 1];
